@@ -30,7 +30,7 @@ jobs:
 
       - name: Run Pytest and create report
         continue-on-error: false
-        run: pytest --junitxml=pytest-report.xml
+        run: pytest test --maxfail=1 --disable-warnings -q --junitxml=pytest-report.xml
 
       - name: Upload Pytest report
         uses: actions/upload-artifact@v4
